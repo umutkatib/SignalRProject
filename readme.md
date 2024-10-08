@@ -1,7 +1,7 @@
-### An order qrcode site with SignalR
+## An order qrcode site with SignalR
 
 
-### N Tier Architecture, EntityFramework Core, Automapper...
+## N Tier Architecture, EntityFramework Core, Automapper...
 
 
-#### Written with Asp.Net Core 6.0
+# Written with Asp.Net Core 6.0
