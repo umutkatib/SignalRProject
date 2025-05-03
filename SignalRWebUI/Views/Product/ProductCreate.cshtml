@@ -1,0 +1,49 @@
+﻿@model CreateProductDto
+
+@{
+    ViewData["Title"] = "ProductCreate";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Ürün İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni Ürün Girişi</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="CategoryName">Ürün Adı</label>
+								<input asp-for="ProductName" type="text" class="form-control" id="ProductName">
+								<small id="emailHelp" class="form-text text-muted">Lütfen ürün adını(adlarını) baş harflerini büyük olarak giriniz.</small>
+							</div>
+							<div class="form-group">
+								<label for="CategoryName">Fiyat</label>
+								<input asp-for="ProductPrice" type="text" class="form-control" id="ProductPrice">
+							</div>
+							<div class="form-group">
+								<label for="CategoryName">Görsel</label>
+								<input asp-for="ProductImageUrl" type="text" class="form-control" id="ProductImageUrl">
+							</div>
+							<div class="form-group">
+								<label for="CategoryName">Kategori</label>
+								@Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+							</div>
+							<div class="form-group">
+								<label for="CategoryName">Açıklama</label>
+								<input asp-for="ProductDescription" type="text" class="form-control" id="ProductDescription">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">Ürünü Ekle</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
