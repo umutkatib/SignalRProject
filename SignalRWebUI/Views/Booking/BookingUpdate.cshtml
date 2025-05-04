@@ -1,0 +1,57 @@
+﻿@model UpdateBookingDto
+
+@{
+    ViewData["Title"] = "BookingUpdate";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Rezervasyon İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Rezervasyon Güncelleme</div>
+						</div>
+						<input type="hidden" asp-for="BookingID" />
+						<div class="card-body">
+							<div class="form-group">
+								<label for="BookingName">Ad Soyad</label>
+								<input asp-for="BookingName" type="text" class="form-control" id="BookingName">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="BookingPhone">Telefon</label>
+								<input asp-for="BookingPhone" type="text" class="form-control" id="BookingPhone">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="BookingMail">Mail</label>
+								<input asp-for="BookingMail" type="email" class="form-control" id="BookingMail">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="BookingPersonCount">Kişi Sayısı</label>
+								<input asp-for="BookingPersonCount" type="text" class="form-control" id="BookingPersonCount">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="BookingDate">Tarih</label>
+								<input asp-for="BookingDate" type="date" class="form-control" id="BookingDate">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">Rezervasyonu Güncelle</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

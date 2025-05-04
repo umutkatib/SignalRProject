@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SignalRWebUI.Dtos.AboutDtos;
+using SignalRWebUI.Dtos.BookingDtos;
 using System.Text;
 
 namespace SignalRWebUI.Controllers
 {
-	public class AboutController : Controller
+	public class BookingController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 
-		public AboutController(IHttpClientFactory httpClientFactory)
+		public BookingController(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
 		}
@@ -17,28 +17,28 @@ namespace SignalRWebUI.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("https://localhost:7217/api/About");
+			var responseMessage = await client.GetAsync("https://localhost:7217/api/Booking");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
+				var values = JsonConvert.DeserializeObject<List<ResultBookingDto>>(jsonData);
 				return View(values);
 			}
 			return View();
 		}
 
 		[HttpGet]
-		public IActionResult AboutCreate()
+		public IActionResult BookingCreate()
 		{
 			return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> AboutCreate(CreateAboutDto createAboutDto)
+		public async Task<IActionResult> BookingCreate(CreateBookingDto createBookingDto)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var jsonData = JsonConvert.SerializeObject(createAboutDto);
+			var jsonData = JsonConvert.SerializeObject(createBookingDto);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync("https://localhost:7217/api/About", stringContent);
+			var responseMessage = await client.PostAsync("https://localhost:7217/api/Booking", stringContent);			
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
@@ -46,10 +46,10 @@ namespace SignalRWebUI.Controllers
 			return View();
 		}
 
-		public async Task<IActionResult> AboutDelete(int id)
+		public async Task<IActionResult> BookingDelete(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.DeleteAsync($"https://localhost:7217/api/About/{id}");
+			var responseMessage = await client.DeleteAsync($"https://localhost:7217/api/Booking/{id}");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
@@ -58,26 +58,26 @@ namespace SignalRWebUI.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> AboutUpdate(int id)
+		public async Task<IActionResult> BookingUpdate(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync($"https://localhost:7217/api/About/{id}");
-			if (responseMessage.IsSuccessStatusCode)
+			var responseMessage = await client.GetAsync($"https://localhost:7217/api/Booking/{id}");
+			if(responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<UpdateAboutDto>(jsonData);
+				var values = JsonConvert.DeserializeObject<UpdateBookingDto>(jsonData);
 				return View(values);
 			}
 			return View();
 		}
-		[HttpPost] 
-		public async Task<IActionResult> AboutUpdate(UpdateAboutDto updateAboutDto)
+		[HttpPost]
+		public async Task<IActionResult> BookingUpdate(UpdateBookingDto updateBookingDto)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var jsonData = JsonConvert.SerializeObject(updateAboutDto);
+			var jsonData = JsonConvert.SerializeObject(updateBookingDto);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync("https://localhost:7217/api/About/", stringContent);
-			if(responseMessage.IsSuccessStatusCode)
+			var responseMessage = await client.PutAsync("https://localhost:7217/api/Booking", stringContent);
+			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
 			}
