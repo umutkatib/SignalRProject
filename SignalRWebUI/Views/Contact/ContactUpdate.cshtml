@@ -1,0 +1,51 @@
+﻿@model UpdateContactDto
+
+@{
+    ViewData["Title"] = "ContactUpdate";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İletişim İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni İletişim Güncelleme</div>
+						</div>
+						<input type="hidden" asp-for="ContactID" />
+						<div class="card-body">
+							<div class="form-group">
+								<label for="ContactLocation">Lokasyon</label>
+								<input asp-for="ContactLocation" type="text" class="form-control" id="ContactLocation">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="ContactPhone">Telefon</label>
+								<input asp-for="ContactPhone" type="text" class="form-control" id="ContactPhone">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="ContactMail">Mail</label>
+								<input asp-for="ContactMail" type="text" class="form-control" id="ContactMail">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="ContactFooterDescription">Açıklama</label>
+								<textarea rows="5" class="form-control" asp-for="ContactFooterDescription"></textarea>
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">İletişim Güncelleme</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

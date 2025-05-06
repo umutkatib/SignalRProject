@@ -1,0 +1,50 @@
+﻿@model CreateDiscountDto
+
+@{
+    ViewData["Title"] = "DiscountCreate";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İndirim İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni İndirim Girişi</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="DiscountTitle">Ürün</label>
+								<input asp-for="DiscountTitle" type="text" class="form-control" id="DiscountTitle">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="DiscountAmount">İndirim Oranı</label>
+								<input asp-for="DiscountAmount" type="text" class="form-control" id="DiscountAmount">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="DiscountImageUrl">Görsel Url</label>
+								<input asp-for="DiscountImageUrl" type="text" class="form-control" id="DiscountImageUrl">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="DiscountDescription">Açıklama</label>
+								<input asp-for="DiscountDescription" type="text" class="form-control" id="DiscountDescription">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">İndirim Ekle</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
