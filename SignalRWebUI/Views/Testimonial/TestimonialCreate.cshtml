@@ -1,0 +1,50 @@
+﻿@model CreateTestimonialDto
+
+@{
+    ViewData["Title"] = "TestimonialCreate";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Müşteri Yorum İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni Müşteri Yorum Girişi</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="TestimonialName">Müşteri Adı Soyadı</label>
+								<input asp-for="TestimonialName" type="text" class="form-control" id="TestimonialName">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="TestimonialTitle">Müşteri Ünvan</label>
+								<input asp-for="TestimonialTitle" type="text" class="form-control" id="TestimonialTitle">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="TestimonialImageURl">Müşteri Fotoğraf Yolu</label>
+								<input asp-for="TestimonialImageURl" type="text" class="form-control" id="TestimonialImageURl">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="TestimonialComment">Müşteri Yorumu</label>
+								<input asp-for="TestimonialComment" type="text" class="form-control" id="TestimonialComment">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">Yorumu Kaydet</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

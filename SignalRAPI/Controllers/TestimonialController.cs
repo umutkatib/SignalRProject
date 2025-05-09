@@ -41,7 +41,7 @@ namespace SignalRAPI.Controllers
 			return Ok("Müşteri Yorumu Eklendi");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult TestimonialDelete(int id)
 		{
 			var value = _testimonialService.TGetByID(id);
@@ -64,7 +64,7 @@ namespace SignalRAPI.Controllers
 			return Ok("Müşteri Yorumu Güncellendi");
 		}
 
-		[HttpGet("TestimonialGet")]
+		[HttpGet("{id}")]
 		public IActionResult TestimonialGet(int id)
 		{
 			var value = _testimonialService.TGetByID(id);

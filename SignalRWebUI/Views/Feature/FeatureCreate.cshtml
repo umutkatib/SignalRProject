@@ -5,5 +5,58 @@
     Layout = "~/Views/Admin/Index.cshtml";
 }
 
-<h1>FeatureCreate</h1>
-
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Öne Çıkan İşlemleri</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Yeni Öne Çıkan Girişi</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="FeatureTitle1">1. Başlık</label>
+								<input asp-for="FeatureTitle1" type="text" class="form-control" id="FeatureTitle1">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="FeatureTitle2">2. Başlık</label>
+								<input asp-for="FeatureTitle2" type="text" class="form-control" id="FeatureTitle2">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="FeatureTitle3">3. Başlık</label>
+								<input asp-for="FeatureTitle3" type="text" class="form-control" id="FeatureTitle3">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="FeatureDescription1">1. Açıklama</label>
+								<input asp-for="FeatureDescription1" type="text" class="form-control" id="FeatureDescription1">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="FeatureDescription2">2. Açıklama</label>
+								<input asp-for="FeatureDescription2" type="text" class="form-control" id="FeatureDescription2">
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<label for="FeatureDescription3">3. Açıklama</label>
+								<input asp-for="FeatureDescription3" type="text" class="form-control" id="FeatureDescription3">
+							</div>
+						</div>
+						<div class="card-action">
+							<button class="btn btn-success">Öne Çıkan Ekle</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
