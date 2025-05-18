@@ -32,7 +32,7 @@ namespace SignalR.DataAccessLayer.EntityFramework
 		{
 			using var context = new SignalRContext();
 			return context.Orders.Where(x => x.OrderDate == 
-			DateOnly.Parse(DateTime.Now.ToShortDateString())).Sum(y  => y.OrderTotalPrice);
+			DateTime.Parse(DateTime.Now.ToShortDateString())).Sum(y  => y.OrderTotalPrice);
 		}
 
 		public int TotalOrderCount()
