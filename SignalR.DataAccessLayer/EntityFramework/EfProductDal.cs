@@ -29,7 +29,7 @@ namespace SignalR.DataAccessLayer.EntityFramework
 		{
 			using var context = new SignalRContext();
 			return context.Products.Where(x => x.CategoryID == 
-				(context.Categories.Where(y => y.CategoryName == "İçecek")
+				(context.Categories.Where(y => y.CategoryName == "İçecekler")
 				.Select(z => z.CategoryID)
 				.FirstOrDefault()))
 					.Count();
