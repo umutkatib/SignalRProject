@@ -1,0 +1,84 @@
+﻿@model List<ResultContactDto>
+
+@foreach(var item in Model)
+{
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col">
+                    <div class="footer_contact">
+                        <h4>
+                            Bize Ulaşın
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="@item.ContactLocation">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    Lokasyon
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    @item.ContactPhone
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    @item.ContactMail
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <div class="footer_detail">
+                        <a href="/Default/Index/" class="footer-logo">
+                            @item.ContactFooterTitle
+                        </a>
+                        <p>
+                            @item.ContactFooterDescription
+                        </p>
+                        <div class="footer_social">
+                            <a href="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h4>
+                        @item.ContactFooterOpenDays
+                    </h4>
+                    <p>
+                        @item.ContactFooterOpenDaysDescription
+                    </p>
+                    <p>
+                        @item.ContactFooterOpenHours
+                    </p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır | All rights reserved
+                    <br />
+                    &copy; <span id="displayYear"></span> Developed By
+                    <a href="https://ukatib.com.tr/" target="_blank"><strong>UK</strong></a>
+                </p>
+            </div>
+        </div>
+    </footer>
+}
